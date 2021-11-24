@@ -2,8 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import Vuex from 'vuex'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
+import './rem'
+import ECharts from 'vue-echarts'
+import "echarts"
 
-Vue.use(Vuex)
+Vue.component('v-chart', ECharts)
+Vue.use(Vuex).use(ElementUI)
 
 Vue.config.productionTip = false
 
