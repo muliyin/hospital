@@ -138,7 +138,7 @@ export default {
     methods:{
         toDetail(index,row){
             console.log(index,row)
-            router.push({path:'confirmdetail'})
+            this.$router.push({name:'confirmdetail',query:{type:'confirm'}})
         }
     }
 }

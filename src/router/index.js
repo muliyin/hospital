@@ -6,33 +6,45 @@ import List from "@/views/list/List";
 import Search from "@/views/search/Search";
 import Analysis from "@/views/Analysis";
 import ConfirmDetail from "@/views/confirm/ConfirmDetail";
+import ListDetail from "@/views/list/ListDetail"
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
+        redirect: '/confirm',
         name: 'Home',
         component: Home,
         children: [
             {
                 path: 'confirm',
+                name: 'confirm',
                 component: Confirm
             },
             {
                 path: 'confirmdetail',
+                name: 'confirmdetail',
                 component: ConfirmDetail
             },
             {
                 path: 'list',
+                name: 'list',
                 component: List
             },
             {
+                path: 'listdetail',
+                name: 'listdetail',
+                component: ListDetail
+            },
+            {
                 path: 'search',
+                name: 'search',
                 component: Search
             },
             {
                 path: 'analysis',
+                name: 'analysis',
                 component: Analysis
             },
         ]
