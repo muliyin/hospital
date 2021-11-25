@@ -44,7 +44,7 @@
             </el-container>
         </el-container>
 
-        <el-dialog title="登录" :visible.sync="dialogFormVisible" class="login-dia">
+        <el-dialog title="登录" :visible.sync="dialogFormVisible" class="login-dia" :close-on-click-modal="false" destroy-on-close>
             <el-form :model="form" label-width="80px" style="width: 30rem;margin: 0 auto">
                 <el-form-item label="账号">
                     <el-input v-model="form.name"></el-input>
