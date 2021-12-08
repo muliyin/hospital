@@ -20,6 +20,8 @@
             label="操作">
             <template slot-scope="scope">
                 <el-button
+                    type="primary"
+                    plain
                     size="mini"
                     @click="toDetail(scope.$index, scope.row)">患者详情</el-button>
             </template>

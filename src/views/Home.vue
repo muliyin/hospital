@@ -15,10 +15,11 @@
                 </div>
             </el-header>
             <el-container>
-                <el-aside>
+                <el-aside width="15rem">
                     <el-menu
-                        default-active="1"
+                        :default-active="defaultIndex"
                         router
+                        @select="selectMenu"
                         class="menu-container">
                         <el-menu-item index="1" route="confirm">
                             <i class="el-icon-finished"></i>
@@ -38,7 +39,7 @@
                         </el-menu-item>
                     </el-menu>
                 </el-aside>
-                <el-main>
+                <el-main style="padding-left: 3rem">
                     <router-view></router-view>
                 </el-main>
             </el-container>
@@ -67,8 +68,12 @@ export default {
     data() {
         return {
             dialogFormVisible:false,
+            defaultIndex:'',
             form:{}
         }
+    },
+    mounted() {
+        this.defaultIndex = sessionStorage.getItem('menuIndex') || '1'
     },
     methods: {
         /**
@@ -83,13 +88,21 @@ export default {
          */
         login(){
 
+        },
+
+        /**
+         * 选择菜单
+         * @param index
+         */
+        selectMenu(index){
+            sessionStorage.setItem('menuIndex',index)
         }
     }
 }
 </script>
 <style scoped>
 .el-header, .el-footer {
-    background-color: #afb4db;
+    background-color: #80BEFF;
     color: white;
     text-align: center;
     line-height: 5rem;
@@ -100,14 +113,14 @@ export default {
 
 .el-aside {
     height: 90vh;
-    background-color: #F8F8FF;
+    background-color: #ffffff;
     color: #333;
     text-align: center;
     line-height: 200px;
 }
 
 .el-menu {
-    background-color: #F8F8FF;
+    background-color: #F4F8FE;
 }
 
 .el-main {
@@ -134,6 +147,11 @@ export default {
 
 .dialog-footer {
     text-align: center;
+}
+
+.el-menu-item {
+    height: 4.5rem;
+    border-bottom: solid 1px #B7D9FE;
 }
 
 </style>

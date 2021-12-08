@@ -21,6 +21,8 @@
                 <template slot-scope="scope">
                     <el-button
                         size="mini"
+                        type="primary"
+                        plain
                         @click="toDetail(scope.$index, scope.row)">患者详情</el-button>
                 </template>
             </el-table-column>
@@ -28,7 +30,6 @@
     </div>
 </template>
 <script>
-import router from "@/router";
 
 export default {
     name: 'Confirm',
